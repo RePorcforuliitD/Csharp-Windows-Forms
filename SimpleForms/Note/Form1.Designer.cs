@@ -40,6 +40,7 @@
             this.editEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewVToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpHToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -77,24 +78,28 @@
             this.newFileToolStripMenuItem.Name = "newFileToolStripMenuItem";
             this.newFileToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.newFileToolStripMenuItem.Text = "New File(&N)";
+            this.newFileToolStripMenuItem.Click += new System.EventHandler(this.newFileToolStripMenuItem_Click);
             // 
             // openFileToolStripMenuItem
             // 
             this.openFileToolStripMenuItem.Name = "openFileToolStripMenuItem";
             this.openFileToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.openFileToolStripMenuItem.Text = "Open File(&O)";
+            this.openFileToolStripMenuItem.Click += new System.EventHandler(this.openFileToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
             this.saveToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.saveToolStripMenuItem.Text = "Save(&S)";
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // saveAsToolStripMenuItem
             // 
             this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
             this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.saveAsToolStripMenuItem.Text = "Save As(&A)";
+            this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.saveAsToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
@@ -121,11 +126,21 @@
             this.helpHToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.helpHToolStripMenuItem.Text = "Help(&H)";
             // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBox1.Location = new System.Drawing.Point(0, 24);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(584, 537);
+            this.richTextBox1.TabIndex = 1;
+            this.richTextBox1.Text = "";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(584, 561);
+            this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
@@ -151,6 +166,7 @@
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveAsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.RichTextBox richTextBox1;
     }
 }
 
