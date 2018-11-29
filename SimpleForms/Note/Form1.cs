@@ -25,13 +25,30 @@ namespace Note
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string message = "Are you sure you want to exit?";
-
-            if (MessageBox.Show(message, "Confirm Exit",
-                MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question
-                ) == DialogResult.Yes)
+            string message = "";
+            if (richTextBox1.Text != "")
             {
-                this.Close();
+                message = "Do you want to save changes to the " + filePath + " ?";
+                if (MessageBox.Show(message, "Note",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    saveFileDialog.FileName = "Untitled.txt";
+                    filePath = "";
+                    richTextBox1.Text = "";
+
+                    this.Text = "Untitled" + "- Note";
+                }
+                else
+                {
+                    message = "Are you sure you want to exit?";
+
+                    if (MessageBox.Show(message, "Confirm Exit",
+                        MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question
+                        ) == DialogResult.Yes)
+                    {
+                        this.Close();
+                    }
+                }
             }
         }
 
@@ -39,8 +56,8 @@ namespace Note
         {
             if (richTextBox1.Text != "")
             {
-                string message = "new file";
-                if (MessageBox.Show(message, "new file",
+                string message = "Do you want to save changes to the " + filePath + " ?";
+                if (MessageBox.Show(message, "Note",
                     MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     saveFileDialog.FileName = "Untitled.txt";
