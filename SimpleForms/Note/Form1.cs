@@ -16,5 +16,17 @@ namespace Note
         {
             InitializeComponent();
         }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string message = "Are you sure you want to exit?";
+
+            if (MessageBox.Show(message, "Confirm Exit",
+                MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question
+                )==DialogResult.Yes)
+            {
+                this.Close();
+            }
+        }
     }
 }
